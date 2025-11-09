@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulasi | Vokasi Virtue</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom right, #f2f6ff, #e3ecff);
+      color: #222;
+    }
+
+    /* Header & Navigation (tanpa animasi biar clean) */
+    header {
+      background-color: #003b88;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    nav {
+      background-color: #004aad;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 8px 16px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd43b;
+      transform: scale(1.05);
+    }
+
+    /* Card Container with fade-slide animation */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeSlideUp 0.8s ease-out;
+    }
+
+    .container h2 {
+      color: #003b88;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Scenario Card Animation */
+    .scenario {
+      margin-bottom: 25px;
+      background: #f8fbff;
+      padding: 20px;
+      border-left: 5px solid #004aad;
+      border-radius: 8px;
+      animation: fadeSlideUp 1s ease-out;
+    }
+
+    .scenario h3 {
+      color: #004aad;
+      margin-top: 0;
+    }
+
+    /* Option Buttons */
+    .options button {
+      display: block;
+      width: 100%;
+      background-color: #004aad;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      padding: 12px;
+      margin-top: 10px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .options button:hover {
+      background-color: #003b88;
+      transform: scale(1.03);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Result Box Animation */
+    .result {
+      margin-top: 20px;
+      background: #e8f5e9;
+      border-left: 5px solid #2e7d32;
+      padding: 15px;
+      border-radius: 6px;
+      display: none;
+      animation: fadeIn 0.6s ease;
+    }
+
+    /* Navigation Buttons */
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    .nav-buttons a {
+      background-color: #004aad;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #003b88;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #003b88;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+    }
+
+    /* Keyframes */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>VOKASI VIRTUE</h1>
+    <p>Media Interaktif Penguatan Karakter dan Etos Kerja</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="belajar.html">Belajar</a>
+    <a href="simulasi.html">Simulasi</a>
+    <a href="kuis.html">Kuis</a>
+    <a href="refleksi.html">Refleksi Diri</a>
+    <a href="tentang.html">Tentang</a>
+  </nav>
+
+  <div class="container">
+    <h2>Simulasi: Tantangan Etos Kerja Vokasi</h2>
+
+    <div class="scenario">
+      <h3>🧩 Skenario 1: Tugas Kelompok Mendadak</h3>
+      <p>Dosen memberikan tugas kelompok besar yang harus dikumpulkan dalam 3 hari...</p>
+      <div class="options">
+        <button onclick="showResult(1, 'Baik! Kamu memilih untuk mengajak berdiskusi dan menyelesaikan masalah bersama. Itu mencerminkan kerja sama dan tanggung jawab! 💪')">Menghubungi dan mengajak diskusi</button>
+        <button onclick="showResult(1, 'Hmm... kalau kamu diam saja, kerja tim bisa terganggu. Etos kerja vokasi menuntut kolaborasi aktif.')">Mengerjakan sendiri biar cepat</button>
+        <button onclick="showResult(1, 'Menyerahkan masalah ke dosen bisa jadi opsi terakhir, tapi alangkah baiknya dicoba diselesaikan secara tim dulu.')">Langsung lapor ke dosen</button>
+      </div>
+      <div id="result1" class="result"></div>
+    </div>
+
+    <div class="scenario">
+      <h3>⚙️ Skenario 2: Telat Datang Magang</h3>
+      <p>Kamu datang 20 menit terlambat karena macet. Supervisor menanyakan alasannya...</p>
+      <div class="options">
+        <button onclick="showResult(2, 'Sikap jujur dan bertanggung jawab adalah karakter utama pekerja vokasi yang profesional! 🙌')">Mengakui dan minta maaf</button>
+        <button onclick="showResult(2, 'Menyalahkan keadaan tanpa introspeksi bisa mengurangi kepercayaan orang lain terhadap profesionalismemu.')">Menyalahkan macet</button>
+        <button onclick="showResult(2, 'Diam saja justru bisa dianggap tidak peduli. Etos kerja tinggi butuh komunikasi terbuka.')">Diam saja</button>
+      </div>
+      <div id="result2" class="result"></div>
+    </div>
+
+    <div class="nav-buttons">
+      <a href="belajar.html">← Back</a>
+      <a href="kuis.html">Next →</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>Vokasi Virtue | Erik Ferdiansyah</p>
+  </footer>
+
+  <script>
+    function showResult(num, message) {
+      const resultDiv = document.getElementById("result" + num);
+      resultDiv.style.display = "block";
+      resultDiv.innerHTML = "<p>" + message + "</p>";
+    }
+  </script>
+</body>
+</html>

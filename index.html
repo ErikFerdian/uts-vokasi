@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vokasi Virtue | Penguatan Karakter & Etos Kerja</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ====== Gaya Utama ====== */
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #f2f6ff, #e3ecff);
+      color: #222;
+    }
+
+    header {
+      background-color: #003b88;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      background-color: #004aad;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 8px 16px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd43b;
+    }
+
+    /* ====== Hero Section ====== */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 50px 20px;
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero-text h2 {
+      font-size: 2.2rem;
+      color: #003b88;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-top: 10px;
+    }
+
+    .hero-text button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 1rem;
+      color: white;
+      background-color: #004aad;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero-text button:hover {
+      background-color: #003b88;
+      transform: scale(1.05);
+    }
+
+    .hero-img img {
+      width: 350px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* ====== Quote Section ====== */
+    .quote {
+      background-color: #f8fbff;
+      text-align: center;
+      padding: 40px 20px;
+      font-style: italic;
+      color: #003b88;
+      font-size: 1.2rem;
+    }
+
+    /* ====== Footer ====== */
+    footer {
+      background-color: #003b88;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    footer p {
+      margin: 5px 0;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+      .hero-img img {
+        width: 80%;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>VOKASI VIRTUE</h1>
+    <p>Media Interaktif Penguatan Karakter dan Etos Kerja</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Beranda</a>
+    <a href="belajar.html">Belajar</a>
+    <a href="simulasi.html">Simulasi</a>
+    <a href="kuis.html">Kuis</a>
+    <a href="refleksi.html">Refleksi Diri</a>
+    <a href="tentang.html">Tentang</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Bangun Karakter & Etos Kerja yang Kuat</h2>
+      <p>Menjadi insan vokasi bukan cuma soal keterampilan teknis, tapi juga soal karakter dan tanggung jawab. 
+      Yuk asah semangat kerja, disiplin, dan integritasmu lewat media interaktif ini!</p>
+      <button onclick="window.location.href='belajar.html'">Mulai Belajar 🚀</button>
+    </div>
+
+    <div class="hero-img">
+      <img src="lib/p.jpg" alt="Ilustrasi Mahasiswa Vokasi Bekerja Sama">
+    </div>
+  </section>
+
+  <section class="quote">
+    “Etos kerja tinggi adalah fondasi keberhasilan seorang vokasi sejati.”
+  </section>
+
+  <footer>
+    <p>Vokasi Virtue | Erik Ferdiansyah</p>
+  </footer>
+</body>
+</html>

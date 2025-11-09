@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refleksi Diri - Vokasi Virtue</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom, #eef3ff, #dce7ff);
+    }
+
+    /* HEADER */
+    .header {
+      background-color: #003b88;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin: 0;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    .header p {
+      margin: 5px 0 0;
+      font-size: 0.9rem;
+      color: #d0e3ff;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background-color: #0052a3;
+      text-align: center;
+      padding: 12px 0;
+      margin: 0;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* CONTENT CARD */
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      margin: 40px auto;
+      animation: fadeIn 0.7s ease-in-out;
+      text-align: center;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+      resize: none;
+      margin-bottom: 15px;
+    }
+
+    button {
+      margin-top: 10px;
+      background-color: #003b88;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+    button:hover {
+      background-color: #002171;
+      transform: scale(1.05);
+    }
+
+    .result {
+      margin-top: 20px;
+      color: #004d40;
+      font-weight: bold;
+      background: #e3f2fd;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    /* Navigasi */
+    .nav-buttons {
+      margin-top: 25px;
+    }
+    .nav-buttons a {
+      display: inline-block;
+      margin: 10px;
+      color: #ffffff;
+      background-color: #003b88;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .nav-buttons a:hover {
+      background-color: #002171;
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+    .footer {
+      background-color: #003b88;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>VOKASI VIRTUE</h1>
+    <p>Media Interaktif Penguatan Karakter dan Etos Kerja</p>
+  </div>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <a href="index.html">Beranda</a>
+    <a href="belajar.html">Belajar</a>
+    <a href="simulasi.html">Simulasi</a>
+    <a href="kuis.html">Kuis</a>
+    <a href="refleksi.html">Refleksi Diri</a>
+    <a href="tentang.html">Tentang</a>
+  </div>
+
+  <!-- FORM REFLEKSI -->
+  <div class="container">
+    <h1>Refleksi Diri</h1>
+    <p>Isi refleksi berikut untuk mengukur seberapa kuat etos kerja dan karakter vokasimu 💪</p>
+
+    <form id="refleksiForm">
+      <label>Apa makna etos kerja bagimu dalam kehidupan sehari-hari?</label>
+      <textarea id="refleksi" required></textarea>
+
+      <label>Langkah apa yang akan kamu lakukan untuk meningkatkan karakter kerjamu?</label>
+      <textarea id="aksi" required></textarea>
+
+      <button type="submit">Kirim Refleksi ✨</button>
+    </form>
+
+    <div class="result" id="hasilRefleksi"></div>
+
+    <!-- Navigasi -->
+    <div class="nav-buttons">
+      <a href="kuis.html">← Back</a>
+      <a href="tentang.html">Next →</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Vokasi Virtue | Erik Ferdiansyah
+  </div>
+
+<script>
+  const form = document.getElementById("refleksiForm");
+  const hasil = document.getElementById("hasilRefleksi");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    hasil.innerHTML = `✨ Terima kasih sudah refleksi!<br>Terus jaga semangat dan karakter vokasimu! 💙`;
+    form.reset();
+  });
+</script>
+
+</body>
+</html>

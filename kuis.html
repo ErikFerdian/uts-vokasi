@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuis Etos Kerja & Karakter Vokasi</title>
+  <style>
+    /* Animasi fade-in untuk pertanyaan dan opsi */
+.fade-in {
+  animation: fadeSlide 0.6s ease;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animasi hover pada opsi jawaban */
+.options label {
+  display: block;
+  background: #e8f0ff;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+.options label:hover {
+  background: #d6e2ff;
+  transform: scale(1.02);
+  border-color: #0052a3;
+}
+
+/* Animasi tombol */
+button, .nav-buttons a {
+  transition: all 0.3s ease;
+}
+button:hover, .nav-buttons a:hover {
+  transform: scale(1.05);
+}
+
+/* Result muncul dengan animasi */
+.result {
+  animation: popUp 0.6s ease;
+}
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+    /* Header */
+    .header {
+      background-color: #003b88;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin: 0; /* ✅ Hilangkan jarak bawah */
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    .header p {
+      margin: 5px 0 0;
+      font-size: 0.9rem;
+      color: #d0e3ff;
+    }
+
+    /* Navigation bar */
+    .navbar {
+      background-color: #0052a3;
+      padding: 12px 0;
+      text-align: center;
+      margin: 0; /* ✅ Pastikan nempel ke header */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 500;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Quiz card */
+    .quiz-wrapper {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .quiz-title {
+      text-align: center;
+      color: #003b88;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 17px;
+      font-weight: 600;
+      color: #003b88;
+      margin-bottom: 15px;
+    }
+
+    .options label {
+      display: block;
+      background: #e8f0ff;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .options label:hover {
+      background: #d0e2ff;
+      border-color: #1976d2;
+    }
+
+    button {
+      background-color: #003b88;
+      color: white;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #002b6b;
+    }
+
+    .result {
+      margin-top: 25px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #003b88;
+      padding: 15px;
+      background: #e3f2fd;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      background: #003b88;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .nav-buttons a:hover {
+      background: #002b6b;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #003b88;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>VOKASI VIRTUE</h1>
+    <p>Media Interaktif Penguatan Karakter dan Etos Kerja</p>
+  </div>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <a href="index.html">Beranda</a>
+    <a href="belajar.html">Belajar</a>
+    <a href="simulasi.html">Simulasi</a>
+    <a href="kuis.html">Kuis</a>
+    <a href="refleksi.html">Refleksi Diri</a>
+    <a href="tentang.html">Tentang</a>
+  </div>
+
+  <!-- QUIZ CARD -->
+  <div class="quiz-wrapper">
+    <div class="quiz-title">Kuis: Penguatan Karakter & Etos Kerja</div>
+    <div id="quiz">
+      <div class="question" id="question">Pertanyaan muncul di sini</div>
+      <div class="options" id="options"></div>
+      <div style="text-align: right;">
+        <button id="next-btn">Next →</button>
+      </div>
+      <div class="result" id="result"></div>
+      <div class="nav-buttons" id="nav-buttons" style="display: none;">
+        <a href="simulasi.html">← Back</a>
+        <a href="refleksi.html">Next →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Vokasi Virtue | Erik Ferdiansyah
+  </div>
+
+<script>
+  const quizData = [
+    {question: "1. Apa arti etos kerja bagi mahasiswa vokasi?", options: ["Kerja cepat tanpa rencana", "Sikap tekun dan tanggung jawab dalam bekerja", "Kerja hanya saat diawasi", "Kerja untuk hasil instan"], answer: 1},
+    {question: "2. Contoh karakter unggul di lingkungan vokasi adalah...", options: ["Malas belajar", "Disiplin dan jujur", "Menunda tugas", "Tidak mau bekerja sama"], answer: 1},
+    {question: "3. Mengapa kerja sama penting dalam dunia vokasi?", options: ["Agar pekerjaan terasa ringan", "Agar bisa saling menyontek", "Supaya tidak perlu belajar sendiri", "Untuk meningkatkan ego pribadi"], answer: 0},
+    {question: "4. Etos kerja yang baik ditunjukkan dengan...", options: ["Menyerah saat gagal", "Datang tepat waktu dan bertanggung jawab", "Mengabaikan tugas kecil", "Bekerja hanya untuk nilai"], answer: 1},
+    {question: "5. Karakter mahasiswa vokasi di era digital sebaiknya...", options: ["Adaptif, kreatif, dan berintegritas", "Mengandalkan orang lain", "Menghindari teknologi", "Menunggu arahan tanpa inisiatif"], answer: 0}
+  ];
+
+  let currentQuestion = 0;
+  let score = 0;
+
+  function loadQuestion() {
+  const data = quizData[currentQuestion];
+  const questionEl = document.getElementById("question");
+  const optionsEl = document.getElementById("options");
+
+  questionEl.textContent = data.question;
+  optionsEl.innerHTML = "";
+
+  // Tambah animasi setiap pindah soal
+  questionEl.classList.add("fade-in");
+  optionsEl.classList.add("fade-in");
+  setTimeout(() => {
+    questionEl.classList.remove("fade-in");
+    optionsEl.classList.remove("fade-in");
+  }, 600);
+
+  data.options.forEach((opt, i) => {
+    const label = document.createElement("label");
+    label.innerHTML = `<input type="radio" name="quiz" value="${i}"> ${opt}`;
+    optionsEl.appendChild(label);
+  });
+}
+
+document.getElementById("next-btn").addEventListener("click", () => {
+  const selected = document.querySelector('input[name="quiz"]:checked');
+  if (!selected) {
+    alert("Pilih dulu jawabannya! 😊");
+    return;
+  }
+  if (parseInt(selected.value) === quizData[currentQuestion].answer) score++;
+
+  currentQuestion++;
+  if (currentQuestion < quizData.length) {
+    loadQuestion();
+  } else {
+    showResult();
+  }
+});
+
+function showResult() {
+  document.getElementById("question").style.display = "none";
+  document.getElementById("options").style.display = "none";
+  document.getElementById("next-btn").style.display = "none";
+
+  const resultEl = document.getElementById("result");
+  resultEl.innerHTML = `🎉 Kuis selesai! Nilai kamu: <b>${score} / ${quizData.length}</b>`;
+  resultEl.classList.add("fade-in");
+
+  document.getElementById("nav-buttons").style.display = "flex";
+}
+
+
+  loadQuestion();
+</script>
+
+</body>
+</html>
